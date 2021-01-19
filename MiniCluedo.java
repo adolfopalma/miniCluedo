@@ -38,11 +38,12 @@ public class MiniCluedo {
         combinacionSecreta[1] = habitaciones[(int) (Math.random() * 6)];
         combinacionSecreta[2] = personajes[(int) (Math.random() * 8)];
 
+        System.out.println(Arrays.toString(combinacionSecreta));
+
         while (esElArma == false) {
             System.out.println("Adivina el arma, aun no has dicho las siguientes:");
-            for (int i = 0; i < armas.length; i++) {
-                System.out.println(armas[i]);
-            }
+            System.out.println(Arrays.toString(armas));
+
             respuesta = entrada.nextLine();
             if (respuesta.equals(combinacionSecreta[0])) {
                 System.out.println("Has acertado");
@@ -50,16 +51,15 @@ public class MiniCluedo {
             } else {
                 for (int i = 0; i < armas.length; i++) {
                     if (respuesta.equals(armas[i])) {
-                        armas[i] = "";
+                        armas[i] = "X";
                     }
                 }
             }
         }
         while (esLaHabitacion == false) {
             System.out.println("Adivina la habitacion, aun no has dicho las siguientes:");
-            for (int i = 0; i < habitaciones.length; i++) {
-                System.out.println(habitaciones[i]);
-            }
+            System.out.println(Arrays.toString(habitaciones));
+
             respuesta = entrada.nextLine();
             if (respuesta.equals(combinacionSecreta[1])) {
                 System.out.println("Has acertado");
@@ -67,16 +67,15 @@ public class MiniCluedo {
             } else {
                 for (int i = 0; i < habitaciones.length; i++) {
                     if (respuesta.equals(habitaciones[i])) {
-                        habitaciones[i] = "";
+                        habitaciones[i] = "X";
                     }
                 }
             }
         }
         while (esElPersonaje == false) {
             System.out.println("Adivina el asesino, aun no has dicho los siguientes:");
-            for (int i = 0; i < personajes.length; i++) {
-                System.out.println(personajes[i]);
-            }
+            System.out.println(Arrays.toString(personajes));
+
             respuesta = entrada.nextLine();
             if (respuesta.equals(combinacionSecreta[2])) {
                 System.out.println("Has acertado y ganado el juego !!!!!!!!!");
@@ -84,7 +83,7 @@ public class MiniCluedo {
             } else {
                 for (int i = 0; i < personajes.length; i++) {
                     if (respuesta.equals(personajes[i])) {
-                        personajes[i] = "";
+                        personajes[i] = "X";
                     }
                 }
             }
